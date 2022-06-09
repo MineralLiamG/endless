@@ -20,6 +20,11 @@ def update():
     elif Kaktus.x <= -20:
         Kaktus.x = 818
 
+def gameover():
+    if dino.colliderect(Kaktus):
+        dino.y += 30
+        
+
 
 Kaktus = Actor('cactus')
 Kaktus.y = 315
