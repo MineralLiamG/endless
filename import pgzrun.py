@@ -9,14 +9,15 @@ desertback1.topleft = 0,0
 desertback2 = Actor('desertback')
 desertback2.topleft = 799,0
 
-dinolaufen1 = Actor('run1')
-dinolaufen2 = Actor('run2')
-dinolaufen3 = Actor('run3')
-dinolaufen4 = Actor('run4')
-dinolaufen5 = Actor('run5')
-dinolaufen6 = Actor('run6')
-dinolaufen7 = Actor('run7')
-dinolaufen8 = Actor('run8')
+dinolaufen[]    #hier muss die liste hin
+    dinolaufen1 = Actor('run1')
+    dinolaufen2 = Actor('run2')
+    dinolaufen3 = Actor('run3')
+    dinolaufen4 = Actor('run4')
+    dinolaufen5 = Actor('run5')
+    dinolaufen6 = Actor('run6')
+    dinolaufen7 = Actor('run7')
+    dinolaufen8 = Actor('run8')
 
 def update():
     desertback1.x -=1
@@ -43,7 +44,7 @@ def draw():
     Kaktus.draw()
     dinolaufen1.draw()
 
-while spielaktiv:
+for i in range(8): #die liste wird hier mit einer pause zwischendurch durchgegangen
     
 
 
