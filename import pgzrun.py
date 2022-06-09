@@ -7,16 +7,16 @@ HEIGHT = 400
 desertback1 = Actor('desertback')
 desertback1.topleft = 0,0
 desertback2 = Actor('desertback')
-desertback2.topleft = 800,0
+desertback2.topleft = 799,0
 
 def update():
     desertback1.x -=1
-    desertback2.x +=1
+    desertback2.x -=1
     Kaktus.x -= 1
     if desertback1.x <= -400:
-        desertback1.x = 1200
+        desertback1.x = 1199
     elif desertback2.x <= -400:
-        desertback2.x = 1200
+        desertback2.x = 1199
 
 Kaktus = Actor('cactus')
 Kaktus.y = 315
