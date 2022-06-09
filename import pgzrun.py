@@ -17,6 +17,9 @@ def update():
         desertback1.x = 1199
     elif desertback2.x <= -400:
         desertback2.x = 1199
+    elif Kaktus.x <= -20:
+        Kaktus.x = 818
+
 
 Kaktus = Actor('cactus')
 Kaktus.y = 315
