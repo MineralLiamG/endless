@@ -1,9 +1,10 @@
-from pickle import FALSE, TRUE
 import pgzrun
+from pgzhelper import *
 import random
 
 WIDTH = 800
 HEIGHT = 400
+jumpy = 0
 
 game_over = False
 
@@ -16,10 +17,11 @@ dino = Actor('idle1')
 dino.images = ['run1','run2','run3','run4','run5','run6','run7','run8','dead8']
 dino.fps = 10
 
-
-    
+   
 def update():
-    global game_over
+    global jumpy
+    dino.animate()
+    dino.y -= jumpy
     desertback1.x -=1
     desertback2.x -=1
     Kaktus.x -= 1
@@ -29,10 +31,14 @@ def update():
         desertback2.x = 1199
     elif Kaktus.x <= -20:
         Kaktus.x = 818
-   
-    if dino.colliderect(Kaktus):
-        dino.image = "dead8"
-        game_over = TRUE
+    elif keyboard.space:
+        jumpy = 5
+        clock.schedule(runter, 0.5)
+
+def runter():
+    global jumpy
+    for i in range(1):
+        jumpy = -5
 
 Kaktus = Actor('cactus')
 Kaktus.y = 315
@@ -41,9 +47,6 @@ dino.y = 300
 
 
        
-
-
-
 def draw():
     screen.clear()
     desertback1.draw()
