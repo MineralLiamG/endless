@@ -37,6 +37,7 @@ Kaktus = Actor('cactus')
 Kaktus.y = 315
 Kaktus.x = 700
 dinolaufen1.y = 315
+
 def gameover():
     if dinolaufen1.colliderect(Kaktus):
         spielaktiv = False
