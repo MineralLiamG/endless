@@ -1,5 +1,6 @@
 import pgzrun
 import random
+from pgzhelper import *
 
 WIDTH = 800
 HEIGHT = 400
@@ -24,12 +25,17 @@ def update():
         desertback2.x = 1199
     elif Kaktus.x <= -20:
         Kaktus.x = 818
+        gameover
 
 Kaktus = Actor('cactus')
 Kaktus.y = 315
 Kaktus.x = 700
+dino.y = 315
 
-
+def gameover():
+    if dino.colliderect(Kaktus):
+        dino.image = "dead8"
+       
 def draw():
     screen.clear()
     desertback1.draw()
