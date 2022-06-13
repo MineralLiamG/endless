@@ -4,6 +4,7 @@ import random
 
 WIDTH = 800
 HEIGHT = 400
+jumpy = 0
 
 desertback1 = Actor('desertback')
 desertback1.topleft = 0,0
@@ -14,8 +15,11 @@ dino = Actor('idle1')
 dino.images = ['run1','run2','run3','run4','run5','run6','run7','run8']
 dino.fps = 10
 
+   
 def update():
+    global jumpy
     dino.animate()
+    dino.y -= jumpy
     desertback1.x -=1
     desertback2.x -=1
     Kaktus.x -= 1
@@ -25,7 +29,14 @@ def update():
         desertback2.x = 1199
     elif Kaktus.x <= -20:
         Kaktus.x = 818
-        gameover
+    elif keyboard.space:
+        jumpy = 5
+        clock.schedule(runter, 0.5)
+
+def runter():
+    global jumpy
+    for i in range(1):
+        jumpy = -5
 
 Kaktus = Actor('cactus')
 Kaktus.y = 315
