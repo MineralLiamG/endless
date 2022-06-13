@@ -37,15 +37,12 @@ Kaktus.x = 700
 
 Dino = Actor('idle1')
 Dino.x = 700
+
 def draw():
     screen.clear()
     desertback1.draw()
     desertback2.draw()
     Kaktus.draw()
     dinolaufen1.draw()
-
-while spielaktiv:
-    
-
 
 pgzrun.go()
