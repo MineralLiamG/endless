@@ -10,17 +10,13 @@ desertback1.topleft = 0,0
 desertback2 = Actor('desertback')
 desertback2.topleft = 799,0
 
-dinolaufen1 = Actor('run1')
-dinolaufen2 = Actor('run2')
-dinolaufen3 = Actor('run3')
-dinolaufen4 = Actor('run4')
-dinolaufen5 = Actor('run5')
-dinolaufen6 = Actor('run6')
-dinolaufen7 = Actor('run7')
-dinolaufen8 = Actor('run8')
+dino = Actor('run1')
+dino.images = ['run1','run2''run3''run4''run5''run6''run7''run8'"dead8"]
+dino.fps = 10
 
 def update():
     desertback1.x -=1
+    dino.animate()
     desertback2.x -=1
     Kaktus.x -= 1
     if desertback1.x <= -400:
@@ -36,13 +32,13 @@ spielaktiv = True
 Kaktus = Actor('cactus')
 Kaktus.y = 315
 Kaktus.x = 700
-dinolaufen1.y = 315
+dino.y = 315
 
 def gameover():
-    if dinolaufen1.colliderect(Kaktus):
+    if dino.colliderect(Kaktus):
         spielaktiv = False
-        dinolaufen1.image = "dead8"
-        screen.draw.text("Game Over",(10, 10))
+        dino.image = "dead8"
+       
 
 
 def draw():
@@ -50,10 +46,6 @@ def draw():
     desertback1.draw()
     desertback2.draw()
     Kaktus.draw()
-    dinolaufen1.draw()
-    gameover
-
-    
-
+    dino.draw()
 
 pgzrun.go()
