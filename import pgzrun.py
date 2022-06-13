@@ -33,7 +33,7 @@ Kaktus.x = 700
 dino.y = 315
 
 def gameover():
-    if dino.colliderect(Kaktus):
+    if dino.collidirect(Kaktus):
         dino.image = "dead8"
        
 
