@@ -1,6 +1,6 @@
 import pgzrun
-import random
 from pgzhelper import *
+import random
 
 WIDTH = 800
 HEIGHT = 400
