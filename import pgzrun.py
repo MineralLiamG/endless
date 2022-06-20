@@ -6,15 +6,16 @@ WIDTH = 800
 HEIGHT = 400
 jumpy = 0
 
+game_over = False
+
 desertback1 = Actor('desertback')
 desertback1.topleft = 0,0
 desertback2 = Actor('desertback')
 desertback2.topleft = 799,0
 
 dino = Actor('idle1')
-dino.images = ['run1','run2','run3','run4','run5','run6','run7','run8']
+dino.images = ['run1','run2','run3','run4','run5','run6','run7','run8','dead8']
 dino.fps = 10
-
    
 def update():
     global jumpy
@@ -41,17 +42,16 @@ def runter():
 Kaktus = Actor('cactus')
 Kaktus.y = 315
 Kaktus.x = 700
-dino.y = 315
-
-def gameover():
-    if dino.collidirect(Kaktus):
-        dino.image = "dead8"
-       
+dino.y = 300
+    
 def draw():
     screen.clear()
     desertback1.draw()
     desertback2.draw()
     Kaktus.draw()
-    dino.draw()
-
+    if game_over:
+        screen.draw.text('Game Over', centerx=400, centery=270, color=(255,255,255), fontsize=60)
+    else:
+        dino.draw()
+        
 pgzrun.go()
